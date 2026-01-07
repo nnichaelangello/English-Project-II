@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Project Portal - IT 05-01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1535; /* lebih terang */
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .tech-pattern {
+            background-image: 
+                linear-gradient(rgba(147, 51, 234, 0.18) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.18) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .prose p {
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen tech-pattern">
+
+    <div id="app"></div>
+
+    <script>
+        const groupMembers = [
+            {
+                id: 'edo',
+                name: 'LORENSIUS APOLINARIS LEDO WEA',
+                role: '1202220035',
+                avatar: './img/edo.jpeg',
+               assignments: [
+                    { id: 'edo-1', type: 'Self-Intro', title: 'Meet Edo: The Technologist with a Presidential Vision', date: 'Jan 06, 2026', image: './img/edo2.jpg', content: `
+<h2 class="text-2xl font-black text-white mb-4">I. Personal and Geographical Foundation</h2>
+<p class="text-slate-300 leading-relaxed">
+Good morning. Allow me to introduce myself. My name is <b>Lorensius Apolinaris Ledo Wea</b>, though I am commonly known by my familiar nickname, <b>Edo</b>.
+I come from the beautiful island of <b>Flores (NTT)</b>, specifically Bajawa — a place rich in tradition and strong community values.
+Currently, I live in Surabaya and I am proudly continuing my education as a 7th semester student at Telkom University Surabaya.
+</p>
+
+<h2 class="text-2xl font-black text-white mb-4 mt-10">II. Academic Focus and Technical Ambitions</h2>
+<p class="text-slate-300 leading-relaxed">
+I am pursuing a degree in <b>Information Technology</b>, a field I find truly fascinating because it combines innovation with real-world problem solving.
+My primary interests revolve around <b>Internet of Things (IoT)</b> and <b>Cybersecurity</b>.
+I am amazed by how IoT connects the physical and digital world — but I also realize that greater connectivity means greater risk.
+That is why I am deeply passionate about cybersecurity — securing technology that shapes the future.
+</p>
+
+<h2 class="text-2xl font-black text-white mb-4 mt-10">III. Language Proficiency</h2>
+<p class="text-slate-300 leading-relaxed">
+One thing that strengthens my personal development is my English proficiency.
+Since childhood, I have been exposed to English through movies and music.
+Later, studying in a <b>Catholic Seminary School</b> strengthened my discipline and sharpened my communication skills.
+Even today, I continue to improve and refine my abilities.
+</p>
+
+<h2 class="text-2xl font-black text-white mb-4 mt-10">IV. Vision for the Future</h2>
+<p class="text-slate-300 leading-relaxed">
+Beyond technical expertise, I hold a bold dream:
+<b>one day, I aspire to become the President of Indonesia</b>.
+Not just as a title, but as a responsibility to build a secure, progressive,
+and technologically empowered nation.
+With strong values from Flores, knowledge from IT, and leadership discipline,
+I hope to contribute meaningfully to my beloved country.
+</p>
+`
+ },
+                    { id: 'edo-2', type: 'Annotated', title: 'Annotated Bibliography: Smart Greenhouse', date: 'Nov 20, 2025', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80', content: 'Comprehensive list of sources regarding IoT implementation in agriculture.' },
+                    { id: 'edo-3', type: 'Essay', title: 'Different Paths, Same Love: Why Functional Empathy is the Key to Interfaith Relationships in the Digital Age', date: 'Jan 5, 2026', image: 'img/digital.jpg', content: `
+<div class="space-y-6 leading-relaxed text-slate-300">
+
+<p>
+Love is a universal human experience, a profound force capable of bridging differences in race, culture, and social background. However, when love manifests between two individuals holding fundamentally different religious beliefs a phenomenon known as interfaith dating—this powerful emotional force is rigorously tested by faith. In the modern digital age, these relationships are further complicated by the tension between personal commitment and societal or spiritual expectations. Although interfaith dating is characterized by fundamental spiritual differences, functional empathy manifested through active listening and the recognition of the inherent value in a partner’s unique faith is the primary key that allows couples to build a resilient, mutually respectful foundation.
+</p>
+
+<p>
+One of the primary conflict points in interfaith relationships is the dilemma of rituals and holiday celebrations. Without empathy, these moments can become zero-sum conflicts where one partner's celebration feels like an invalidation of the other's. Functional empathy transforms this conflict into an opportunity for "shared presence". It enables a partner to participate respectfully in the cultural or familial aspects of a ritual without necessarily committing to the underlying theology. This approach honors the partner's spiritual identity without requiring one to compromise their own beliefs.
+</p>
+
+<p>
+Furthermore, the most potent threats to these unions often come from external sources, such as familial pressure and communal stigma. This external stress can easily exacerbate internal tension. Empathy allows a couple to form a strong "us vs. the world" boundary. By genuinely understanding the internal meaning and the gravity of the spiritual obligations placed upon a partner by their family, the other partner can provide validation and support. This demonstrates unity rather than division, proving that the relationship can withstand external opposition.
+</p>
+
+<p>
+The ultimate functional conflict often involves the future of the union, particularly regarding children's religious identity. Without a clear resolution, this issue can be terminal for the relationship. Empathy facilitates a transition from demanding a "winner" to establishing a shared value system. By focusing on universal values like morality, kindness, and honesty derived from both faiths, the couple shows mutual respect for the foundational value of each other's path.
+</p>
+
+<p>
+In conclusion, the resilience of interfaith relationships is directly proportional to the level of functional empathy exercised by the couple. Unlike passive tolerance, which implies merely "putting up with" differences, functional empathy means actively valuing those differences. By prioritizing active listening and focusing on the partner's spiritual experience over theological dogma, couples effectively build a sustainable foundation. Empathy proves that while the paths to the divine may differ, the shared destination of love, commitment, and fulfillment remains entirely attainable.
+</p>
+
+</div>
+` , references: [
+"Boyd, D. (2014). It's Complicated: The Social Lives of Networked Teens. Yale University Press.",
+
+"Hazan, C., & Shaver, P. (1987). Romantic love conceptualized as an attachment process. Journal of Personality and Social Psychology, 52(3), 511–524.",
+
+"Lewis, C. S. (1960). The Four Loves. Harcourt Brace Jovanovich.",
+
+"Nygren, A. (1982). Agape and Eros. (P. S. Watson, Trans.). Harper & Row.",
+
+"Pew Research Center. (2022). Teens, Social Media, and Technology 2022.",
+
+"Plato. (1993). Symposium. (A. Nehamas & P. Woodruff, Trans.). Hackett Publishing Company.",
+
+"Subramanian, A. (2024, May 10). The New Normal: Transactional Love in the Digital Age. Journal of Contemporary Sociology.",
+
+"Turkle, S. (2011). Alone Together: Why We Expect More from Technology and Less from Each Other. Basic Books.",
+
+"Van Manen, M. (1997). Researching Lived Experience: Human Science for an Action Sensitive Pedagogy. The University of Western Ontario."
+]
+, pdf: "https://drive.google.com/file/d/1cIauzE8MfYs4U7S39B_H9vBi_jAmEgR4/preview",
+ },
+                    { id: 'edo-4', type: 'Slides', title: 'Presentation: Digital Farming', date: 'Dec 15, 2025', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', content: 'Slides presentation about the future of farming technology in Indonesia.' },
+                ]
+            },
+            {
+                id: 'fiona',
+                name: 'FIONNA KAMALA DEWI',
+                role: '1202220036',
+                avatar: 'img/fio.jpeg',
+                assignments: [
+                    { id: 'fiona-1', type: 'Self-Intro', title: 'Hello, I’m Fiona', date: 'Jan 07, 2026', image: 'img/fio2.jpeg', content: `
+<p class="text-slate-300 leading-relaxed">
+Traveling has always been one of my favourite ways to spend time. Every trip feels like opening a new chapter, full stories to collect it’s exploring beautiful views, meeting new people. I love capturing little moments with photos. That’s photography has naturally become another hobby of mine. Whether it’s a sunset view, a bustling market, or just a cup of coffee at a café, I enjoy freezing those moments into pictures.
+</p>
+
+<p class="text-slate-300 leading-relaxed">
+And another things i loved besides my hobby to do travel, I also loved to used my spare time for cooking, I love making simple desserts or snacks like cookies, puddings, or even traditional treats, nothing too complicated, just fun recipes and some of my experiment that bring the joy when they turn out well. Sometimes they’re not perfect, but sharing my food creation with my  family and my friends always makes me feel happier. These two hobbies balance each other out, traveling pushes me to explore and discover, while cooking makes me enjoy, cozy moments and a quality time for myself at my home.
+</p>
+
+<p class="text-slate-300 leading-relaxed">
+One of my dreams is to start a small business, maybe something inspired by the hobbies that i loved. For now, I just want to keep learning,growing, and enjoying every process. I believe that every little step that I take today could lead to something meaningful on the future, even if I don’t know exactly what it is yet.
+</p>
+`
+ },
+                    { id: 'fiona-2', type: 'Annotated', title: 'Annotated Bibliography: Smart Greenhouse', date: 'Nov 20, 2025', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80', content: 'Comprehensive list of sources regarding IoT implementation in agriculture.' },
+                    { id: 'fiona-3', type: 'Essay', title: 'Emotional Design: How Visual Aesthetics Influence User Trust in Digital Platforms', date: 'Jan 5, 2026', image: 'img/ui.jpg', content:`
+<div class="space-y-6 leading-relaxed text-slate-300">
+
+    <p>
+Digital platforms have become deeply integrated into daily life, especially in the modern era where almost every activity is supported by technology. People rely on digital platforms for online shopping, education, communication, financial transactions, entertainment, and many other purposes. Because digital platforms have become a necessity, users expect interfaces that are not only functional, but also visually appealing and emotionally comfortable. Emotional design is an approach that focuses on how interface visuals affect user feelings and psychological responses during digital interactions. Visual aesthetics such as color, layout, typography, image quality, and spacing are critical elements that shape first impressions. Studies show that users often create judgments within the first few seconds of using a platform, and these judgments are largely influenced by appearance (Bird, 2023). When a platform looks clean, modern, and professionally designed, users feel safe and confident. On the other hand, a messy or visually poor interface can quickly reduce trust and cause users to leave. Therefore, the role of emotional design in influencing user trust is highly significant and deserves deeper exploration in the digital experience context.
+    </p>
+
+    <p>
+A clean and simple layout is one of the most fundamental elements that increase user trust. A well-organized interface helps users navigate easily without confusion and improves the overall user experience. When features, menus, and buttons are placed clearly and consistently, users do not feel lost or overwhelmed. The use of sufficient white space allows information to breathe and prevents cognitive overload. Clean design communicates honesty, structure, and safety, which are essential components of trust. In contrast, a cluttered layout filled with advertisements, pop-up notifications, or unstructured content can make users feel uncomfortable and suspicious. Such design often resembles unprofessional websites or even online scams, which immediately creates distrust and causes users to leave the platform (Reading, 2024).
+    </p>
+
+    <p>
+Color also plays a crucial role in influencing users’ emotional reactions. Color psychology suggests that certain colors have strong symbolic meanings and can affect user behavior and perception. Soft and neutral colors such as blue, white, and green often create calming feelings and represent safety, balance, and clarity. Blue, for instance, is widely used by banks and health service platforms because it represents trust, reliability, and professionalism. Conversely, colors like bright red or neon yellow can create anxiety or stress when used excessively and are better suited only for warnings or urgent notifications. Poorly chosen color combinations decrease readability, reduce emotional comfort, and damage user trust. Users who feel visually overwhelmed are likely to stop using the platform and look for alternatives (WebDev, 2025). This shows that color selection is not merely aesthetic but an important psychological strategy that strengthens emotional connection and credibility.
+    </p>
+
+    <p>
+High-quality visual elements such as clear images, readable typography, and professional iconography also play an important role in building user trust. First impressions are often formed from visual detail, and users can immediately sense the difference between high-quality and low-quality design. Platforms that use blurry images, pixelated graphics, or poorly chosen fonts appear unprofessional and unreliable. Users may question the legitimacy of the platform and fear cybersecurity risks such as scams or personal data theft. In contrast, platforms with sharp visuals, professional icons, and clean, readable fonts create an atmosphere of credibility and security. High-quality visuals demonstrate that developers pay attention to detail, user experience, and reliability (Refiana, 2025). Since users judge digital products quickly, visual clarity becomes a powerful factor in shaping trust and long-term engagement.
+    </p>
+
+    <p>
+Another important element of emotional design is typography. The choice of font style, size, spacing, and consistency strongly affects readability and emotional comfort. Fonts that are too small or overly decorative can cause users to feel tired, confused, or frustrated, while clean and modern typography supports clarity and encourages longer engagement. The consistency of typography across pages also creates a sense of structure and reliability. When text is easy to read, users feel respected and supported. However, when typography is chaotic or inconsistent, users may assume that the platform is poorly designed and untrustworthy (Handayani, 2025).
+    </p>
+
+    <p>
+In conclusion, emotional design and visual aesthetics significantly influence user trust in digital platforms. Clean layout, carefully selected colors, and high-quality visual elements help users feel safe, confident, and comfortable, while poor design choices such as messy layouts, overwhelming colors, and low-quality visuals can damage trust and cause users to leave the platform. Therefore, emotional design must be seen not simply as decoration, but as a key strategy for building trust and improving overall user experience. As reliance on digital technology continues to increase, the importance of emotional design will continue to grow and shape the future of digital interaction (Wang, 2025).
+    </p>
+
+</div>
+` , references:[
+       "Bird, C. (2023). How To Use the Psychology of Web Design To Influence User Behavior. CXL.",
+       "Reading, W. D. (2024). The Psychology Behind Effective Web Design.",
+       "WebDev, P. (2025). Psychology of Color in Web Design.",
+       "Handayani, W. U. (2025). Psikologi Warna dalam Kehidupan Sehari-hari.",
+       "Refiana, S. G. (2025). Analisis Warna pada Desain Web Sociolla & Guardian.",
+       "Wang, S. Z. (2025). A Deep Learning Approach to Interface Color Quality Assessment in HCI."
+   ], pdf: "https://drive.google.com/file/d/1G9780zElyftpXz3YF6jBCT_WGgxFU4N0/preview",},
+                    { id: 'fiona-4', type: 'Slides', title: 'Presentation: Digital Farming', date: 'Dec 15, 2025', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', content: 'Slides presentation about the future of farming technology in Indonesia.' },
+                ]
+            },
+            {
+                id: 'dinda',
+                name: 'ADINDA MARIASTI DEWI',
+                role: '1202220041',
+                avatar: '/img/dinda.jpeg',
+                assignments: [
+                    { id: 'dinda-1', type: 'Self-Intro', title: 'Who am I: Where Code Meets Creativity', date: 'Jan 07, 2026', image: '/img/dinda2.jpeg', content: `
+<p class="text-slate-300 leading-relaxed">
+Hi guys! My name is Adinda Mariasti, and I am a seventh-semester Information Technology student at Telkom University Surabaya. During this semester, I am taking two internships. One at CloudNow Solutions in Surabaya as a graphic designer, and another at PT Rmdoo Teknologi Indonesia in Sidoarjo as a mobile frontend developer. These experiences allow me to explore both my passion for design and my academic focus in Information Technology.
+</p>
+
+<p class="text-slate-300 leading-relaxed">
+Although my major is IT, I have a strong interest in software development, particularly in UI/UX and frontend development. I enjoy creating designs that are not only functional but also visually appealing. At the same time, my internship as a graphic designer lets me express my creativity by producing content for social media. These two different roles help me grow in both technical and creative fields.</p>
+
+<p class="text-slate-300 leading-relaxed">
+Outside academics and internships, I have several hobbies that keep me balanced. I love playing guitar and singing pop songs in English and Korean, especially from artists like Maroon 5, IU, and Coldplay. I also enjoy swimming as my favorite sport and reading novels whenever I have free time. These activities keep me relaxed and inspired.
+</p>
+
+<p class="text-slate-300 leading-relaxed">
+In the future, I dream of working in the creative industry as a graphic designer or in the IT field as a UI/UX or frontend developer. Beyond that, I aspire to build my own business by selling notebooks with covers that I design myself.</p>
+` },
+                    { id: 'dinda-2', type: 'Annotated', title: 'Annotated Bibliography: Smart Greenhouse', date: 'Nov 20, 2025', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80', content: 'Comprehensive list of sources regarding IoT implementation in agriculture.' },
+                    { id: 'dinda-3', type: 'Essay', title: 'Boosting Algorithms for Smart Greenhouse Automation', date: 'Jan 5, 2026', image: 'https://images.unsplash.com/photo-1708796705570-33fd29ef67d0?w=800&q=80', content: `
+<div class="space-y-6 leading-relaxed text-slate-300">
+
+<p>
+In today’s digital era, greenhouse cultivation systems have rapidly advanced
+through the integration of Artificial Intelligence (AI) and the Internet of Things (IoT),
+enabling far greater precision and efficiency compared to traditional agricultural
+practices. Sensor-based automation is now widely used to monitor and regulate
+environmental conditions such as temperature, humidity, light intensity, and nutrient
+availability in real time, leading to more sustainable and productive greenhouse
+operations. Research indicates that AI technologies integrated into smart
+greenhouses can enhance crop yields, optimize resource use, and reduce the risks
+of pest and disease outbreaks, thereby strengthening long-term agricultural
+sustainability (Maraveas, 2023). As IoT devices generate increasingly complex
+environmental datasets, AI methods such as boosting algorithms have become
+essential for producing accurate predictions and supporting automated
+decision-making processes. Consequently, boosting algorithms have emerged as a
+core component in the development of intelligent greenhouse systems focused on
+maximizing productivity and resource efficiency.
+</p>
+
+<p>
+Boosting algorithms operate by iteratively combining numerous weak
+learners, typically shallow decision trees, into a robust predictive model that
+progressively reduces errors. In every boosting iteration, the new learner is trained to
+emphasize the misclassified or high-error samples from the previous model, creating
+a sequential learning process that focuses on correcting past mistakes. This
+mechanism enables boosting to capture complex, nonlinear interactions within
+sensor-generated environmental data that traditional models often fail to identify.
+Modern boosting variants build on this foundation with optimized strategies for
+instance, state-of-the-art comparisons show that frameworks such as XGBoost,
+LightGBM, and CatBoost are tuned to balance accuracy, computational efficiency,
+and generalization performance when handling large tabular data (Bentéjac et al.,
+2021). LightGBM further accelerates training with a leaf-wise tree growth strategy
+and introduces Gradient-based One-Side Sampling (GOSS) and Exclusive Feature
+Bundling (EFB), enabling efficient processing of high-dimensional greenhouse data
+(Li et al., 2023). Boosting consistently outperforms other ensemble approaches in
+both regression and classification tasks, particularly under noisy or imbalanced
+environmental conditions (Kumar et al., 2022). Such capabilities make boosting
+especially valuable for greenhouse applications, where microclimatic variations and
+sensor noise demand highly adaptive and precise predictive models.
+</p>
+
+<p>
+Beyond their algorithmic strengths, boosting models play a critical role in
+predicting greenhouse environmental dynamics and resource needs. Their ability to
+detect subtle shifts in temperature, humidity, or light intensity allows them to
+generate highly reliable forecasts essential for automated control. For instance,
+XGBoost has been reported to predict plant water requirements with nearly 97%
+accuracy, enabling irrigation systems to activate only when necessary and reducing
+water use by approximately 42% while maintaining optimal hydration (Ghiat et al.,
+2025). In a broader comparative study, IoT-enabled greenhouses equipped with
+automated fertilization and irrigation demonstrated up to 89% higher crop yields
+while reducing water and fertilizer usage by 41% and 91%, respectively (Pizzileo et
+al., 2025). Through these capabilities, boosting algorithms contribute to smarter,
+more sustainable greenhouse management by ensuring that key resources are
+applied precisely where and when they are needed.
+</p>
+
+<p>
+Another powerful capability of boosting algorithms is early plant disease and
+stress detection, which is particularly critical in greenhouse environments where
+pathogens and environmental stressors thrive under warm, humid conditions.
+Boosting algorithms, especially when combined with image-processing and
+hyperspectral imaging, can identify disease or physiological stress patterns long
+before visual symptoms become apparent. For instance, a recent study using
+XGBoost with optimized hyper-parameters successfully classified diseased vs.
+healthy leaves across multiple datasets (Tomato, Rice, PlantVillage), achieving
+accuracy, precision, and recall rates that outperform many conventional classifiers
+(Majumdar, 2025). Similarly, in a study using hyperspectral imaging of Brassica
+juncea leaves, boosting models (AdaBoost, XGBoost, LightGBM) accurately
+predicted internal metabolites such as chlorophyll and flavonoids, indicators
+correlated with plant health and stress levels, thus demonstrating non-destructive
+stress and nutrient-status monitoring capabilities (Yoon et al., 2023). Through these
+applications, early disease detection, stress/nutrient status monitoring, and optimized
+climate/irrigation control, boosting algorithms prove to be a versatile tool in building
+robust early-warning systems for greenhouse agriculture.
+</p>
+
+<p>
+In conclusion, boosting algorithms serve as a cornerstone for modern smart
+greenhouse automation. Their ability to provide highly accurate predictions, optimize
+key agricultural resources, and detect plant diseases in their earliest stages gives
+growers powerful tools to enhance productivity and sustainability. While initial setup
+may require investment in sensors, computing systems, and technical training, the
+long-term benefits, including reduced water and energy usage, improved crop health,
+and enhanced yield reliability, make boosting algorithms indispensable in the era of
+digital agriculture. As AI and IoT technologies continue to advance, boosting
+algorithms will become even more integral to solving global agricultural challenges
+such as resource scarcity, climate instability, and increasing food demand. Ultimately,
+their integration into greenhouse management systems represents a major step
+toward creating efficient, resilient, and environmentally responsible agricultural
+practices for the future.
+</p>
+
+</div>
+`
+ , references: [
+"Bentéjac, C., Csörgő, A., & Martínez-Muñoz, G. (2021). A comparative analysis of gradient boosting algorithms. Artificial Intelligence Review, 54(3), 1937–1967. https://doi.org/10.1007/s10462-020-09896-5",
+
+"Ghiat, I., Govindan, R., & Al-Ansari, T. (2025). Data-driven model predictive control for irrigation management in agricultural greenhouses under CO2 enrichment. Smart Agricultural Technology, 12, 101071. https://doi.org/10.1016/j.atech.2025.101071",
+
+"Kumar, S., Kaur, P., & Gosain, A. (2022). A Comprehensive Survey on Ensemble Methods. 2022 IEEE 7th International Conference for Convergence in Technology (I2CT), 1–7. https://doi.org/10.1109/I2CT54291.2022.9825269",
+
+"Li, B., Liu, K., Wang, M., Wang, Y., He, Q., Zhuang, L., & Zhu, W. (2023). High-spatiotemporal-resolution dynamic water monitoring using LightGBM model and Sentinel-2 MSI data. International Journal of Applied Earth Observation and Geoinformation, 118, 103278. https://doi.org/10.1016/j.jag.2023.103278",
+
+"Majumdar, P. (2025). Plant Leaf Disease Detection Using XGBoost with OPTUNA Hyperparameter Optimization. SN Computer Science, 6(7), 891. https://doi.org/10.1007/s42979-025-04434-y",
+
+"Maraveas, C. (2023). Incorporating Artificial Intelligence Technology in Smart Greenhouses: Current State of the Art. Applied Sciences, 13(1). https://doi.org/10.3390/app13010014",
+
+"Pizzileo, G., Colizzi, L., Guerriero, E., Adamo, T., & Chiriacò, M. V. (2025). Resource use efficiency and environmental sustainability in greenhouse agriculture through IoT-based irrigation and fertilization management. Smart Agricultural Technology, 12, 101180. https://doi.org/10.1016/j.atech.2025.101180",
+
+"Yoon, H. I., Lee, H., Yang, J.-S., Choi, J.-H., Jung, D.-H., Park, Y. J., Park, J.-E., Kim, S. M., & Park, S. H. (2023). Predicting Models for Plant Metabolites Based on PLSR, AdaBoost, XGBoost, and LightGBM Algorithms Using Hyperspectral Imaging of Brassica juncea. Agriculture, 13(8). https://doi.org/10.3390/agriculture13081477"
+]
+, pdf: "https://drive.google.com/file/d/1Q2IAFnl9j-HqTiSd4gB5J5I5vcnLH8pi/preview",
+},
+                    { id: 'dinda-4', type: 'Slides', title: 'Presentation: Digital Farming', date: 'Dec 15, 2025', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', content: 'Slides presentation about the future of farming technology in Indonesia.' },
+                ]
+            },
+            {
+                id: 'farhan',
+                name: 'AGIL FARHANDANI',
+                role: '1202220042',
+                avatar: 'img/farhan.jpeg',
+                assignments: [
+                    { id: 'farhan-1', type: 'Self-Intro', title: 'Farhan - Hangout Spots in my Hometown', date: 'Jan 07, 2026', image: 'img/farhan2.jpeg', content: `
+<p class="text-slate-300 leading-relaxed">
+My name is Farhan from Sidoarjo, and I’m a seventh-semester university student. I enjoy playing badminton, but lately I haven’t played much because I’ve been busy with assignments. This semester I’ve started hanging out more—like many people my age—sometimes at friends’ houses, sometimes at roadside coffee stalls, cafés, or anywhere that offers a change of scenery.
+</p>
+
+<p class="text-slate-300 leading-relaxed">
+These days I often grab coffee and hang out in the morning at places that are off the beaten path—not at home, coffee stalls, or cafés. I go to lesser-visited spots in Sidoarjo such as Lapindo, Lembah Dieng, and Ranu Manduro. I recommend visiting Lapindo at dawn to catch the sunrise; the view is similar to watching the sun rise over the beach. At night Lapindo is just as lovely—calm air, a gentle breeze, and the sound and sight of passing vehicles from atop the embankment. Another perk is that early in the morning or at night you typically don’t have to pay an entrance fee. Just bring a camp chair and some drinks to enjoy the atmosphere.
+</p>
+
+<p class="text-slate-300 leading-relaxed">
+Lembah Dieng and Ranu Manduro are great for both sunrise and sunset. Unlike Lapindo, these places usually have entrance gates, and because they’re more remote they can feel a bit eerie at night. I suggest going in the morning, when the vibe is peaceful. As with Lapindo, simply bring a camp chair, drinks, and some snacks—and be prepared to pay the entrance fee where it applies.
+</p>
+
+<p class="text-slate-300 leading-relaxed">
+That’s a bit about what I’ve been doing lately and my recommendations for off-the-beaten-path hangout spots in Sidoarjo.
+</p>
+` },
+                    { id: 'farhan-2', type: 'Annotated', title: 'Annotated Bibliography: Smart Greenhouse', date: 'Nov 20, 2025', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80', content: 'Comprehensive list of sources regarding IoT implementation in agriculture.' },
+                    { id: 'farhan-3', type: 'Essay', title: 'The Impact of AI in Modern Agriculture', date: 'Jan 5, 2026', image: 'https://images.unsplash.com/photo-1708796705570-33fd29ef67d0?w=800&q=80', content: "In today's digital era, greenhouse cultivation systems have rapidly advanced through the integration of AI..." },
+                    { id: 'farhan-4', type: 'Slides', title: 'Presentation: Digital Farming', date: 'Dec 15, 2025', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', content: 'Slides presentation about the future of farming technology in Indonesia.' },
+                ]
+            },
+            {
+                id: 'ajeng',
+                name: ' WAHYUNING AJENG ARFIATIN',
+                role: ' 1202220045',
+                avatar: './img/ajeng.jpeg',
+                  assignments: [
+                    { id: 'ajeng-1', type: 'Self-Intro', title: 'Know me better!', date: 'Jan 7, 2026', image: '/img/ajeng2.jpeg', content: `
+
+<p class="text-slate-300 leading-relaxed">
+I am a student of <b>Information Technology at Telkom University Surabaya</b>.  
+My favorite subject is <b>UI/UX design</b> because it beautifully combines 
+creativity and technology. Every day, I attend lectures and complete 
+assignments that continuously improve my knowledge and skills.
+</p>
+
+
+<p class="text-slate-300 leading-relaxed">
+UI/UX design is a challenging field that requires creativity, patience, 
+and strong attention to detail. I enjoy practicing design by creating 
+mockups and prototypes. Watching tutorials and learning new design 
+trends has become part of my daily routine.
+</p>
+
+
+<p class="text-slate-300 leading-relaxed">
+Currently, I am doing an internship as a <b>UI/UX Designer</b> at an IT services company.  
+This real-world experience allows me to apply what I learn in class while 
+developing my professional skills. Although I am not active in IT clubs, 
+I work on personal projects to continue improving myself.
+</p>
+
+
+<p class="text-slate-300 leading-relaxed">
+My daily life is about balancing studies, internship work, design practice, 
+and rest. Maintaining a healthy lifestyle is important to keep my mind 
+focused and productive.
+</p>
+
+
+<p class="text-slate-300 leading-relaxed">
+My dream is to become a <b>professional UI/UX designer</b> who creates 
+beautiful, meaningful, and user-friendly digital experiences.  
+I want to make a positive impact through my work.  
+Right now, my main goal is to finish my studies and build a strong portfolio 
+that will support my future career.
+</p>
+
+<p class="text-slate-300 leading-relaxed mt-6">
+I believe that passion, dedication, and continuous learning are the keys to success.
+</p>
+`
+ },
+                    { id: 'ajeng-2', type: 'Annotated', title: 'Annotated Bibliography: Smart Greenhouse', date: 'Nov 20, 2025', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80', content: 'Comprehensive list of sources regarding IoT implementation in agriculture.' },
+                    { id: 'ajeng-3', type: 'Essay', title: 'Predicting Indoor Objects on 2D LiDAR Point Cloud Using Convolutional Neural Network (CNN) ', date: 'Jan 5, 2026', image: 'img/lidar.jpg', content: `
+<div class="space-y-6 leading-relaxed text-slate-300">
+
+<p>
+Understanding indoor environments is an important challenge in modern robotics, especially for robots that operate inside homes, offices, hospitals, or public buildings. One of the technologies commonly used for indoor sensing is LiDAR, which stands for Light Detection and Ranging. A 2D LiDAR sensor works by sending out laser beams and measuring how long it takes for the light to return after hitting an object. From this process, the sensor produces a 2D point cloud, a collection of points that represent the distance and shape of objects around it. At the same time, Convolutional Neural Networks (CNNs) are deep learning models known for their strong ability to learn visual and spatial patterns from data. While CNNs are mostly used for images, researchers today are using them to analyze LiDAR point cloud data to identify and predict indoor objects. Although some argue that 2D LiDAR is limited because it only scans in one plane, many studies show that CNN can still extract useful features from this data. Therefore, predicting indoor objects on 2D LiDAR point clouds using CNN is effective because CNN improves accuracy, enhances spatial understanding in robots, and supports advanced indoor navigation systems.
+</p>
+
+<p>
+To understand why CNN is suitable for this task, it is important to first recognize how 2D LiDAR and point cloud data work. A 2D LiDAR sensor rotates and sends thousands of laser beams per second to measure the distance of nearby objects. The result is a set of points that form the outline of walls, furniture, and obstacles inside a room. Although this data does not include height information, it still gives a clear horizontal view of the environment. For example, the point cloud can show the shapes of chairs, tables, and cabinets based on the distances measured around them. Because 2D LiDAR provides fast and accurate data, it is widely used in indoor robots for tasks such as mapping and obstacle detection. The patterns found in the point cloud can be analyzed by machine learning models to identify different types of indoor objects. Even though 2D LiDAR is less detailed than 3D LiDAR, it is cheaper, faster, and efficient for many indoor applications, making it a practical sensor for object prediction.
+</p>
+
+<p>
+Convolutional Neural Networks (CNNs) play an important role in processing this point cloud data. A CNN is a deep learning model that automatically learns important features from spatial data without requiring manual feature engineering. When 2D LiDAR point clouds are transformed into grid-like images, CNNs can read these grids just like they read traditional images. The model can then learn differences in shapes and patterns to distinguish between objects such as walls, tables, or chairs. One of the strengths of CNN is its ability to identify features at multiple levels, from simple edges to complex object structures. This means CNN can recognize how a table might appear in a point cloud scan even if it is partially blocked or scanned from different angles. CNNs also perform well with large datasets, becoming more accurate as they are trained with more examples. Because of these capabilities, CNN has become a powerful tool for predicting objects from 2D LiDAR data.
+</p>
+
+<p>
+The benefits of using CNN-based prediction in indoor environments are especially valuable for robotics. When a robot can correctly predict objects around it using 2D LiDAR scans, its navigation becomes much safer and more intelligent. The robot can avoid obstacles more effectively, plan better movement paths, and generate detailed indoor maps. For example, a home cleaning robot can detect furniture positions and adjust its cleaning route automatically. Indoor delivery robots can identify hallways, doors, and objects to reach their destination without collisions. Security robots can recognize people or moving objects for monitoring purposes. Beyond robotics, this technology also supports smart building systems, where automatic devices need accurate understanding of room layout and furniture placement. By using CNN on 2D LiDAR data, these systems become more efficient in interacting with indoor environments.
+</p>
+
+<p>
+In conclusion, predicting indoor objects on 2D LiDAR point cloud using CNN is an important and promising research area. A 2D LiDAR sensor provides reliable and fast point cloud data, while CNN is able to learn meaningful patterns and object shapes from that data. Based on the discussion, this combination is effective because it supports object recognition, improves detection accuracy, and enhances indoor robot navigation. With these advantages, CNN-based prediction on 2D LiDAR point cloud has strong potential to support the development of smarter indoor robots and more advanced automation systems in the future.
+</p>
+
+</div>
+`,  references:[
+       
+   ], pdf: "https://drive.google.com/file/d/10l4Yk9RsaFUP2ZcEN4zb1E6ow9HSnFdj/preview" },
+                    { id: 'ajeng-4', type: 'Slides', title: 'Presentation: Digital Farming', date: 'Dec 15, 2025', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80', content: 'Slides presentation about the future of farming technology in Indonesia.' },
+                ]
+            }
+        ];
+
+        let currentState = { view: 'home', memberData: null, assignmentData: null };
+        const appContainer = document.getElementById('app');
+
+        function navigateTo(view, memberId = null, assignmentId = null) {
+            currentState.view = view;
+            if (memberId) currentState.memberData = groupMembers.find(m => m.id === memberId);
+            if (assignmentId && currentState.memberData)
+                currentState.assignmentData = currentState.memberData.assignments.find(a => a.id === assignmentId);
+            window.scrollTo(0, 0);
+            render();
+        }
+
+        function getIconHtml(type) {
+            switch (type) {
+                case 'Essay': return '<i data-lucide="file-text" class="w-4 h-4"></i>';
+                case 'Slides': return '<i data-lucide="presentation" class="w-4 h-4"></i>';
+                case 'Annotated': return '<i data-lucide="book-open" class="w-4 h-4"></i>';
+                case 'Self-Intro': return '<i data-lucide="user-circle" class="w-4 h-4"></i>';
+                default: return '<i data-lucide="file" class="w-4 h-4"></i>';
+            }
+        }
+
+        function getHeaderHtml() {
+            return `
+<header class="relative py-24 bg-slate-900/60 border-b border-slate-700 mb-10 overflow-visible">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/20 blur-[140px] rounded-full -mr-64 -mt-64"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center gap-3 bg-slate-800/70 border border-slate-600 px-6 py-2 rounded-full mb-8 backdrop-blur-xl">
+            <span class="w-2 h-2 bg-purple-400 rounded-full animate-ping"></span>
+            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-200">English 2 • IT 05-01</span>
+        </div>
+        <h1 class="text-6xl md:text-8xl font-serif italic font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-500 leading-tight tracking-tighter">
+            English Project
+        </h1>
+        <p class="mt-6 text-slate-300 font-black text-[10px] uppercase tracking-[0.5em]">
+            English 2 Projects & Research Archive
+        </p>
+    </div>
+</header>`;
+        }
+
+        function renderHome() {
+            const memberCards = groupMembers.map(member => `
+                <div onclick="navigateTo('member', '${member.id}')" class="group relative bg-slate-800/60 backdrop-blur-xl border border-slate-600 rounded-3xl p-8 cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:border-purple-500/70 hover:shadow-[0_20px_50px_-20px_rgba(147,51,234,0.5)]">
+                    <div class="relative w-24 h-24 mb-6 mx-auto">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-opacity"></div>
+                        <img src="${member.avatar}" class="relative w-full h-full object-cover rounded-full border-2 border-slate-500 p-1 bg-slate-900"/>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-black text-white mb-2">${member.name}</h3>
+                        <p class="text-purple-300 text-[10px] uppercase tracking-[0.3em] font-black mb-6">${member.role}</p>
+                        <div class="flex justify-center gap-4 py-4 border-t border-slate-600">
+                        </div>
+                        <button class="mt-4 w-full py-3 bg-slate-700 rounded-xl text-white font-black text-[10px] uppercase tracking-widest group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all">
+                            View Portfolio
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            return `${getHeaderHtml()}
+                <div class="max-w-7xl mx-auto px-6 pb-20">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${memberCards}</div>
+                </div>`;
+        }
+
+        function renderMember(member) {
+            const assignmentCards = member.assignments.map(a => `
+                <div onclick="navigateTo('detail', '${member.id}', '${a.id}')" class="group relative flex bg-slate-800/60 border border-slate-600 rounded-2xl overflow-hidden cursor-pointer hover:border-blue-400 transition-all">
+                    <div class="w-1/3 overflow-hidden">
+                        <img src="${a.image}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+                    </div>
+                    <div class="w-2/3 p-6 flex flex-col justify-center">
+                        <div class="flex items-center gap-2 text-blue-300 text-[10px] font-black uppercase tracking-widest mb-2">
+                            ${getIconHtml(a.type)} ${a.type}
+                        </div>
+                        <h4 class="text-xl font-black text-white mb-4 line-clamp-2 group-hover:text-blue-300 transition-colors">
+                            ${a.title}
+                        </h4>
+                        <div class="flex items-center justify-between text-[10px] text-slate-300 uppercase tracking-widest font-bold">
+                            <span>${a.date}</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4 text-blue-400 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            return `${getHeaderHtml()}
+                <div class="max-w-7xl mx-auto px-6 pb-20">
+                    <button onclick="navigateTo('home')" class="flex items-center gap-2 text-slate-200 hover:text-white mb-12 font-black text-[10px] uppercase tracking-widest">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-purple-400"></i> Back to Team
+                    </button>
+
+                    <div class="flex flex-col md:flex-row items-center gap-10 mb-20 p-10 bg-slate-800/60 rounded-3xl border border-slate-600 backdrop-blur-md">
+                        <img src="${member.avatar}" class="w-40 h-40 rounded-3xl object-cover border-4 border-slate-700"/>
+                        <div class="text-center md:text-left">
+                            <span class="text-purple-300 text-[10px] uppercase tracking-[0.5em] font-black">${member.role}</span>
+                            <h2 class="text-5xl font-black text-white mt-2 mb-4">${member.name}</h2>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">${assignmentCards}</div>
+                </div>`;
+        }
+
+        function renderDetail(member, a) {
+            return `${getHeaderHtml()}
+                <div class="max-w-4xl mx-auto px-6 pb-20">
+                    <button onclick="navigateTo('member', '${member.id}')" class="flex items-center gap-2 text-slate-200 hover:text-white mb-12 font-black text-[10px] uppercase tracking-widest">
+                        <i data-lucide="arrow-left" class="w-4 h-4 text-purple-400"></i> Back to ${member.name}'s Portfolio
+                    </button>
+
+                    <div class="mb-12">
+                        <div class="flex items-center gap-3 mb-8">
+                            <span class="px-4 py-1 bg-blue-500/30 text-blue-200 text-[10px] font-black uppercase tracking-widest rounded-full border border-blue-400/50">${a.type}</span>
+                            <span class="text-slate-400 font-black">•</span>
+                            <span class="text-slate-200 text-[10px] font-black uppercase tracking-widest">${a.date}</span>
+                        </div>
+
+                        <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-8">${a.title}</h1>
+
+                        <div class="flex items-center gap-4 p-4 bg-slate-800/60 border border-slate-600 rounded-2xl">
+                            <img src="${member.avatar}" class="w-12 h-12 rounded-full object-cover"/>
+                            <div>
+                                <p class="text-slate-300 text-[8px] uppercase tracking-widest font-black">Submitted By</p>
+                                <p class="text-white font-black text-sm">${member.name}</p>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="prose prose-invert max-w-none">
+    <p class="text-xl text-slate-100 font-bold mb-10">${a.content}</p>
+</div>
+
+<!-- AUTO REFERENCES -->
+${a.references ? `
+<div class="mt-10 bg-slate-800/60 border border-slate-600 p-6 rounded-2xl">
+    <h3 class="text-xl font-black text-white mb-4 tracking-widest uppercase">
+        References
+    </h3>
+    <ul class="space-y-3 text-slate-300">
+        ${a.references.map(r => `<li>${r}</li>`).join('')}
+    </ul>
+</div>
+` : ''}
+
+<!-- AUTO PDF VIEWER FOR ALL ESSAY -->
+${a.type === 'Essay' && a.pdf ? `
+<div class="mt-10 bg-slate-800/60 border border-slate-600 p-6 rounded-2xl">
+    <h3 class="text-xl font-black text-white mb-4 tracking-widest uppercase">
+        Essay Brainstorming & Outline Document
+    </h3>
+
+    <p class="text-slate-300 leading-relaxed mb-6">
+        This document shows the brainstorming, planning, and outlining process used
+        before writing this essay. It represents how the ideas were developed,
+        structured, and refined into the final writing.
+    </p>
+
+    <div class="w-full h-[650px] rounded-2xl overflow-hidden border border-slate-600">
+        <iframe src="${a.pdf}" class="w-full h-full"></iframe>
+    </div>
+</div>
+` : ''}
+
+
+                    <div class="mt-20 pt-10 border-t border-slate-600 flex justify-between items-center">
+                        <div class="flex gap-4 text-slate-300">
+                            <i data-lucide="share-2" class="w-5 h-5 hover:text-white cursor-pointer"></i>
+                            <i data-lucide="bookmark" class="w-5 h-5 hover:text-white cursor-pointer"></i>
+                        </div>
+                        <button class="flex items-center gap-2 text-blue-300 text-[10px] font-black uppercase tracking-widest">
+                            Download PDF <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>`;
+        }
+
+        function render() {
+            let html = currentState.view === 'home'
+                ? renderHome()
+                : currentState.view === 'member'
+                ? renderMember(currentState.memberData)
+                : renderDetail(currentState.memberData, currentState.assignmentData);
+
+            html += `
+<footer class="border-t border-slate-700 bg-slate-900/80 py-16 mt-20">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+        <div class="flex gap-8 mb-8 text-slate-300">
+            <i data-lucide="mail" class="w-5 h-5 hover:text-purple-300 cursor-pointer"></i>
+            <i data-lucide="linkedin" class="w-5 h-5 hover:text-blue-300 cursor-pointer"></i>
+            <i data-lucide="github" class="w-5 h-5 hover:text-white cursor-pointer"></i>
+        </div>
+        <p class="text-[10px] text-slate-300 font-black uppercase tracking-[0.3em]">
+            © 2026 Academic Archive • IT 05-01 Team
+        </p>
+    </div>
+</footer>`;
+
+            appContainer.innerHTML = html;
+            lucide.createIcons();
+        }
+
+        document.addEventListener('DOMContentLoaded', render);
+    </script>
+</body>
+</html>
